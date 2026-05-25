@@ -186,7 +186,11 @@ export default function Home() {
             href="/library"
             className="flex items-center gap-1 text-xs font-bold text-violet-400 hover:text-violet-300 transition-colors shrink-0"
           >
-            <span>{t("shareButton").replace("Share this result", "View Full Feed").replace("Share This Result", "View Full Feed")}</span>
+            <span>
+              {t("shareButton")
+                .replace("Share this result", "View Full Feed")
+                .replace("Share This Result", "View Full Feed")}
+            </span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -203,9 +207,7 @@ export default function Home() {
         ) : recentPatterns.length === 0 ? (
           <div className="text-center p-8 rounded-2xl bg-slate-950/20 border border-white/5">
             <BookOpen className="w-8 h-8 text-slate-600 mx-auto mb-2" />
-            <p className="text-sm text-slate-500">
-              {t("historyEmptyState")}
-            </p>
+            <p className="text-sm text-slate-500">{t("historyEmptyState")}</p>
           </div>
         ) : (
           <div className="grid sm:grid-cols-3 gap-6">
